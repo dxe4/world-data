@@ -11,7 +11,11 @@ https://docs.djangoproject.com/en/1.7/ref/settings/
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+TOP_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 
+
+def here(*args):
+    return os.path.realpath(os.path.join(TOP_DIR, *args))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.7/howto/deployment/checklist/
@@ -36,6 +40,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'eggs',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -52,6 +57,14 @@ ROOT_URLCONF = 'world_data.urls'
 
 WSGI_APPLICATION = 'world_data.wsgi.application'
 
+
+TEMPLATE_DIRS = (
+    here('eggs/templates'),
+)
+
+STATICFILES_DIRS = (
+    here('eggs/static'),
+)
 
 # Database
 # https://docs.djangoproject.com/en/1.7/ref/settings/#databases
@@ -81,3 +94,4 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = 'staticfiles'
