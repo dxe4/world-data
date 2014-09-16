@@ -10,6 +10,7 @@ https://docs.djangoproject.com/en/1.7/ref/settings/
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
+from collections import namedtuple
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 TOP_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 
@@ -99,3 +100,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = 'staticfiles'
+
+
+Indicator = namedtuple('Indicator', ['name', 'type'])
+INDICATORS = [
+    Indicator("SP.POP.TOTL", "population"),
+]
