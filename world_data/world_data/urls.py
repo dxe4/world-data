@@ -1,7 +1,7 @@
 from django.conf.urls import patterns, include
-from eggs import urls as eggs_urls
+from spam import urls as spam_urls
 
 urlpatterns = patterns(
     '',
-    (r'', include(eggs_urls, namespace='eggs', app_name='eggs')),
+    (r'', include(spam_urls, namespace='eggs', app_name='eggs')),
 )
