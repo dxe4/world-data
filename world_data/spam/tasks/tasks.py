@@ -60,7 +60,7 @@ def make_country(row):
 
 def make_country_info(row):
     '''
-    WARNING by design this depends on staticmethod
+    WARNING by design this depends on state
     make_country has to be called first
     '''
     indicator_name = row.pop('idnicator_name')
