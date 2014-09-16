@@ -102,7 +102,7 @@ STATIC_URL = '/static/'
 STATIC_ROOT = 'staticfiles'
 
 
-Indicator = namedtuple('Indicator', ['name', 'type'])
+Indicator = namedtuple('Indicator', ['code', 'type'])
 INDICATORS = [
     Indicator("SP.POP.TOTL", "population"),
 ]
