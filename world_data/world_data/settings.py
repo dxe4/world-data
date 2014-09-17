@@ -73,10 +73,10 @@ STATICFILES_DIRS = (
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': os.getenv('DB_NAME', 'dev'),
+        'NAME': os.getenv('DB_NAME', 'world_data'),
         'USER': os.getenv('DB_USER', 'dev'),
         'PASSWORD': os.getenv('DB_PASS', 'dev'),
-        'HOST': os.getenv('DB_HOST', ''),
+        'HOST': os.getenv('DB_HOST', '192.168.33.10'),
         # 'PORT': '',
     }
 }
