@@ -100,7 +100,7 @@ def _read_csv(fpath):
 
 
 @task
-def build(fname):
+def import_csv(fname):
     '''
     $ invoke hi thefname
     $ invoke hi --name thefname
